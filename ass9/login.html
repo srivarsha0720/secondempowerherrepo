@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+    <h2>Login</h2>
+    <input id="email" type="text" placeholder="Enter email"><br><br>
+    <input id="password" type="password" placeholder="Enter password"><br><br>
+    <button id="loginBtn">Login</button>
+
+    <div id="footer"></div>
+
+    <script type="module">
+        import navbar from "./components/navbar.js";
+        import footer from "./components/footer.js";
+
+        document.getElementById("navbar").innerHTML = navbar();
+        document.getElementById("footer").innerHTML = footer();
+
+        document.getElementById("loginBtn").addEventListener("click", () => {
+            let storedUser = JSON.parse(localStorage.getItem("user"));
+
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            if (storedUser && storedUser.email === email && storedUser.password === password) {
+                alert("Login successful!");
+                window.location.href = "todos.html";
+            } else {
+                alert("Invalid credentials!");
+            }
+        });
+    </script>
+</body>
+</html>

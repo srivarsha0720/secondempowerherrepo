@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debugging Task</title>
+</head>
+<body>
+
+    <p id="message">Original Message</p>
+    <button id="textButton">Change Text</button>
+    <br><br>
+
+    <div id="box" style="width: 100px; height: 100px; background-color: lightgray;"></div>
+    <button id="colorButton">Change Background</button>
+
+    <script>
+        // Correct JavaScript after fixing bugs
+
+        // Corrected: querySelector('#message') instead of wrong id
+        const para = document.querySelector('#message');
+
+        // Corrected: getElementById instead of getElementByName
+        const textButton = document.getElementById('textButton');
+
+        // Fixed: correct addEventListener syntax and property name (.textContent)
+        textButton.addEventListener('click', () => {
+            para.textContent = "New Message"; // Correct property name
+        });
+
+        // Selecting required elements
+        const box = document.getElementById('box');
+        const colorButton = document.getElementById('colorButton');
+
+        // Fix: Correct style property name and event listener spelling
+        colorButton.addEventListener('click', () => {
+            box.style.backgroundColor = "blue"; // Correct spelling of backgroundColor
+        });
+
+    </script>
+
+</body>
+</html>
